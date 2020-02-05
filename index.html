@@ -5,6 +5,7 @@
  <!--[if gt IE 8]><!-->
  <html class="no-js">
  <!--<![endif]-->
+
  <head>
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,23 +28,20 @@
              <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
          <![endif]-->
      <main class="container">
-         <header>
-             <h1>Search A Movie Title Below</h1>
+         <header class="row">
+             <h1 class="col">Search A Movie Title Below</h1>
          </header>
-
          <section>
-             <!-- <form> -->
-                 <label><input id="search"></input></label> <!--Title-->
-                 <label><input id="year" type="number"></input></label> <!--Year, Dropdown-->
-                 <label><input></input></label> <!--Genre, Dropdown-->
-                 <label><input></input></label> <!--Director-->
-                 <button id="get">CLICK ME</button>
-             <!-- </form>   -->
+             <label><input id="search"></input></label>
+             <!--Title-->
+             <label><input id="year" type="number"></input></label>
+             <!--Year, Dropdown-->
+             <button id="get">CLICK ME</button>
          </section>
-         <section id="movies">
+         <section id="movies"> 
+             <h2>Results</h2>
+             <p id="results"></p>
              <!-- This will be hidden until results are displayed-->
-
-
          </section>
      </main>
      <script src="./main.js" async defer></script>

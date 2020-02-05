@@ -7,10 +7,12 @@
     z-index: -1;
 }
 
-body{
+h1{
     color:white; /*Just for now*/
 }
 
 #movies{
     background-color: white;
+    
 }
+
