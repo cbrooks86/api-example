@@ -13,8 +13,11 @@ document.getElementById("get").addEventListener("click", function () {
             results.innerText = res.total_results + " Results";
             if (res.Error !== "Movie not found!") {
                 res.results.forEach(function (element) {
+                    var moviesContainer = document.getElementById("movies");
+                    moviesContainer.classList.remove("hide-me");
                     var movieDiv = document.createElement("article");
-                    movieDiv.classList.add("movie-title"); //Adding a class
+                    movieDiv.classList.add("movie-title");
+                    movieDiv.classList.add("col");
                     var movieTitle = document.createElement("h2");
                     var movieSummary = document.createElement("p");
                     var moviePoster = document.createElement("img");
@@ -32,11 +35,13 @@ document.getElementById("get").addEventListener("click", function () {
                     else {
                         moviePoster.src = "https://image.tmdb.org/t/p/w500" + element.backdrop_path;
                     }
-                    document.getElementById("movies").append(movieDiv);
+                    document.getElementById("results").append(movieDiv);
                     movieDiv.append(movieTitle);
                     movieDiv.append(moviePoster);
                     movieDiv.append(movieSummary);
-                    moviePoster.classList.add("movie-poster"); //Adding a class
+                    moviePoster.classList.add("movie-poster");
+                    moviePoster.classList.add("rounded");
+                    moviePoster.classList.add("float-left");
                 });
             }
             else {

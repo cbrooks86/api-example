@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Oswald&display=swap');
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+body {
+    font-family: 'Oswald', sans-serif;
+    color: white;;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Audiowide', cursive;
+    color: white;
+}
+
 #myVideo {
     position: fixed;
     right: 0;
@@ -7,29 +24,130 @@
     z-index: -1;
 }
 
-h1{
-    color:white; /*Just for now*/
+#results a{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left: 3px;
+    background: #C300F5; /* Default color, all browsers */
+    color: white;
+    text-decoration: none;
+}
+#results a {
+    background: #C300F5; /* Default color, all browsers */
 }
 
-#movies{
+#results a::selection {
+    background: #C300F5; /* Selection color, WebKit/Blink Browsers */
+}
+
+#results a::-moz-selection {
+    background: #C300F5; /* Selection color, Gecko Browsers */
+}
+
+#results p{
+    color: white;
+    font-size: 21px;
+    letter-spacing: 0.7px;
+}
+
+h1 {
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+    font-size: 52px;
+    text-align: center;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, .1);
+}
+
+@-webkit-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-moz-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-ms-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@-o-keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+
+#movies {
     background-color: white;
-    
+
 }
 
-article{
-        padding: 5px;
+article {
+    padding: 5px;
 }
 
 article::after {
-        content: "";
-        clear: both;
-        display: table;
-}
-
-img{
-    float: left;
-    margin:12px;
-    max-width: 225px;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .movie-poster {
@@ -42,14 +160,36 @@ img{
     transition-duration: 0.3s;
     -webkit-transition-property: box-shadow, transform;
     transition-property: box-shadow, transform;
-    
-  }
-  .movie-poster:hover, .movie-poster:focus, .movie-poster:active { 
+    margin: 12px;
+    max-width: 225px;
+}
+
+.movie-poster:hover,
+.movie-poster:focus,
+.movie-poster:active {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-  }
+}
 
-.hide-me{
-    display:none;
+.hide-me {
+    display: none;
+}
+
+.search-box,
+#movies {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+}
+
+.search-box h2 {
+    color: white;
+    text-align: left;
+}
+
+#get {
+    font-family: 'Audiowide', cursive;
+    background-color: #C300F5;
+    border-color: #C300F5;
 }
