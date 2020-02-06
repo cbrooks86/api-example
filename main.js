@@ -1,12 +1,13 @@
 document.getElementById("get").addEventListener("click", function () {
     var search = document.getElementById("search")["value"];
     var year = document.getElementById("year")["value"];
+    // let movieTitle = document.getElementsByClassName("movie-title");
+    document.querySelectorAll('.movie-title').forEach(function (e) { return e.remove(); });
+    // movieTitle["firstChild"].remove;
     if (search.length > 2) {
-        document.getElementById;
         fetch("https://api.themoviedb.org/3/search/movie?api_key=ae0ceb1eea00f5ae3235218c36add3b8&language=en-US&query=" + search + "&page=1&include_adult=false&year&primary_release_year=" + year)
             .then(function (response) {
-            if (!response.ok) {
-            }
+            if (!response.ok) { }
             return response.json();
         })
             .then(function (res) {
@@ -14,7 +15,8 @@ document.getElementById("get").addEventListener("click", function () {
             results.innerText = res.total_results + " Results";
             if (res.Error !== "Movie not found!") {
                 res.results.forEach(function (element) {
-                    var movieDiv = document.createElement("div");
+                    var movieDiv = document.createElement("article");
+                    movieDiv.classList.add("movie-title"); //Adding a class
                     var movieTitle = document.createElement("h2");
                     var movieSummary = document.createElement("p");
                     var moviePoster = document.createElement("img");

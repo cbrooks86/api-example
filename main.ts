@@ -1,21 +1,21 @@
 document.getElementById("get").addEventListener("click", function () {
-    let search: string = document.getElementById("search")["value"]
-    let year: number = document.getElementById("year")["value"]
+    let search: string = document.getElementById("search")["value"];
+    let year: number = document.getElementById("year")["value"];
+    document.querySelectorAll('.movie-title').forEach(e => e.remove());
     if (search.length > 2) {
-        document.getElementById
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=ae0ceb1eea00f5ae3235218c36add3b8&language=en-US&query=${search}&page=1&include_adult=false&year&primary_release_year=${year}`)
             .then(function (response) {
-                if (!response.ok) {
-                }
+                if (!response.ok) {}
                 return response.json();
             })
             .then(function (res) {
                 let results = document.getElementById("results")
                 results.innerText = `${res.total_results} Results`;
 
-                if(res.Error !== "Movie not found!"){
+                if (res.Error !== "Movie not found!") {
                     res.results.forEach(element => {
-                        let movieDiv: any = document.createElement("div");
+                        let movieDiv: any = document.createElement("article");
+                        movieDiv.classList.add("movie-title"); //Adding a class
                         let movieTitle: any = document.createElement("h2");
                         let movieSummary: any = document.createElement("p");
                         let moviePoster: any = document.createElement("img");
@@ -28,10 +28,10 @@ document.getElementById("get").addEventListener("click", function () {
                         movieDiv.append(movieSummary)
                         movieDiv.append(moviePoster);
                         moviePoster.classList.add("movie-poster"); //Adding a class
-                    });}
-                   else{
-                       document.getElementById("movies").innerHTML = `<p class="alert">No Movies Found</p>`
-                   } 
+                    });
+                } else {
+                    document.getElementById("movies").innerHTML = `<p class="alert">No Movies Found</p>`
+                }
             })
     } else {
         alert("Your search term must be more than 2 characters");
