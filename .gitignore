@@ -1,6 +1,7 @@
 # Not Needed Files #
 ######################
 test.json
+*.ts
 
 # OS generated files #
 ######################
