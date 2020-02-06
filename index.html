@@ -29,16 +29,28 @@
          <![endif]-->
      <main class="container">
          <header class="row">
-             <h1 class="col">Search A Movie Title Below</h1>
+             <h1 class="col">The 80's Movie Database</h1>
          </header>
          <section>
              <label><input id="search"></input></label>
              <!--Title-->
-             <label><input id="year" type="number"></input></label>
+             <label><select name="year" id="year">
+                     <option type="number" value="1980">1980</option>
+                     <option type="number" value="1980">1981</option>
+                     <option type="number" value="1981">1982</option>
+                     <option type="number" value="1982">1983</option>
+                     <option type="number" value="1983">1984</option>
+                     <option type="number" value="1984">1985</option>
+                     <option type="number" value="1985">1986</option>
+                     <option type="number" value="1986">1987</option>
+                     <option type="number" value="1987">1988</option>
+                     <option type="number" value="1988">1989</option>
+                 </select>
+             </label>
              <!--Year, Dropdown-->
-             <button id="get">CLICK ME</button> 
+             <button id="get">CLICK ME</button>
          </section>
-         <section id="movies" class="hide-me"> 
+         <section id="movies">
              <h2>Results</h2>
              <p id="results"></p>
              <ul id="pagination"></ul>
